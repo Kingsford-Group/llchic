@@ -22,7 +22,7 @@ PyVCF: A python package for manipulating VCF files. Please visit the webpage (ht
 
 # Usage
 
-The whole Long Range Contact Correction module are divided into two parts. The first part is for estimating genomic distribution distance, base calling errrors and re-alignment ambiguous read pairs (read pairs with secondary alignments). The script used is LRCC_part_1.py. 
+The whole Long Range Contact Correction module is divided into two parts. The first part is for estimating genomic distribution distance, base calling errrors and re-alignment ambiguous read pairs (read pairs with secondary alignments). The script used is LRCC_part_1.py. 
 
 Here is an example: 
 
@@ -49,7 +49,7 @@ Here is an example:
 python LRCC_part_2.py -i ./example/input/ -r1 *_R1_hg19.bwt2merged.bam -r2 *_R2_hg19.bwt2merged.bam -o1 ./example/ -o2 ./example/output/ -rs 10000 -m 1
 ```
 
-Note that all the files in the input path that match the form "*_R1_hg19.bwt2merged.bam"/"*_R2_hg19.bwt2merged.bam" will be processed parallelly.
+Note that all the files in the input path that match the form '*_R1_hg19.bwt2merged.bam'/'*_R2_hg19.bwt2merged.bam' will be processed parallelly.
 
 Option Tag | Description
 ----------------------- | -----------------------------
@@ -64,29 +64,6 @@ Option Tag | Description
 
 The option "-gf" can be used if genetic variation information are provided. Please visit the webpage (https://gatk.broadinstitute.org/hc/en-us) for the guide of genotype calling. 
 
-
-
-This will generate distance matrix of HiC data and output persistence pairs and all the simplices appeared during the persistent homology. 
-
-
-
-Here is an example:
-```
-python HiC_TDA.py -i example/input/RUES2_CM_combined_100000_iced_chr22.matrix -p example/output/ -o RUES2_CM_combined_100000_iced_chr22 -r 100000
-```
-Run this command line, and we will get three output files:
-
-1: RUES2_CM_combined_100000_iced_chr22_distmat.txt
-This file saves the distance matrix generated from original HiC contact matrix. 
-
-2: RUES2_CM_combined_100000_iced_chr22_persisdiagram.txt
-This file contains all the persistent diagram generated from persistent homology. 
-- the first column: the dimension of a homology class
-- the second column: birth time
-- the third column: death time
-- the fourth column: persitence pairs
-
-3: RUES2_CM_combined_100000_iced_chr22_skeleton.txt
-This file contains all the sinmplices generated from persistent homology. 
-- the first column: a set of nodes representing one simplex
-- the second column: the birth time of the simplex
+The output folder './example/output/' contains two kinds of files. 
+- NHEK_test_R1_hg19_new_multialign.bam/NHEK_test_R2_hg19_new_multialign.bam  These files are new alignment results of ambiguous pairs according to the probabilistic model (step 6 discussed in the paper). 
+- NHEK_test_R1_hg19.bwt2merged.bam/NHEK_test_R2_hg19.bwt2merged.bam  These files are the combination of results in '*_multialign.bam' and the alignment of reliable read pairs (pairs with no secondary alignments). They can be used back to the filtering step of HiC-Pro. 
