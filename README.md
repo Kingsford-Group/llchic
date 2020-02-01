@@ -49,7 +49,7 @@ Here is an example:
 python LRCC_part_2.py -i ./example/input/ -r1 *_R1_hg19.bwt2merged.bam -r2 *_R2_hg19.bwt2merged.bam -o1 ./example/ -o2 ./example/output/ -rs 10000 -m 1
 ```
 
-Note that all the files in the input path that match the form '*_R1_hg19.bwt2merged.ba' and '*_R2_hg19.bwt2merged.bam' will be processed parallelly.
+Note that all the files in the input path that match the form '\*_R1_hg19.bwt2merged.ba' and '\*_R2_hg19.bwt2merged.bam' will be processed parallelly.
 
 Option Tag | Description
 ----------------------- | -----------------------------
