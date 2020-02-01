@@ -66,4 +66,4 @@ The option "-gf" can be used if genetic variation information are provided. Plea
 
 The output folder './example/output/' contains two kinds of files. 
 - NHEK_test_R1_hg19_new_multialign.bam/NHEK_test_R2_hg19_new_multialign.bam  These files are new alignment results of ambiguous pairs according to the probabilistic model (step 6 discussed in the paper). 
-- NHEK_test_R1_hg19.bwt2merged.bam/NHEK_test_R2_hg19.bwt2merged.bam  These files are the combination of results in '*_multialign.bam' and the alignment of reliable read pairs (pairs with no secondary alignments). They can be used back to the filtering step of HiC-Pro. 
+- NHEK_test_R1_hg19.bwt2merged.bam/NHEK_test_R2_hg19.bwt2merged.bam  These files are the combination of results in '*_multialign.bam' and the alignment of reliable read pairs (pairs with no secondary alignments) (step 7 discussed in the paper). They can be used back to the filtering step of HiC-Pro. 
